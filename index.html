@@ -17,32 +17,37 @@
 <main>
   <form id="ageCalculatorForm">
     <div class="input-row">
-<label for="day">DAY</label>
-<input  id="day" name="day">
+<label class="common-label" for="day">day</label>
+<input class="imputDiv"  id="day" name="day">
 </div>
 
 <div class="input-row">
-<label for="month">MONTH</label>
-<input id="month" name="month" >
+<label class="common-label"  for="month">month</label>
+<input class="imputDiv" id="month" name="month" >
 </div>
 
 <div class="input-row">
-<label for="year">YEAR</label>
-<input id="year" name="year" >
+<label class="common-label"  for="year">year</label>
+<input class="imputDiv"id="year" name="year" >
 </div>
   </form>
+  <div class="rectangle-div">
+    <div class=" arrow-svg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+  </div>
+  </div>
+
   <div id="result">
-    <svg id=" arrow-svg" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
-    <div class="result-items">
-      <spna id="result-year empty-span"> --</spna>
+    <div class="results-div">
+      <span class="empty-span" id="result-year"> --</span>
       <span class="result-items">years</span>
     </div>
-    <div >
-      <spnan id="result-month empty-span"">--</spnan>
+    <div class="results-div">
+      <span class="empty-span"  id="result-month ">--</span>
       <span class="result-items">months</span>
     </div>
-    <div>
-      <spna id="result day empty-span"">--</spna>
+    <div class="results-div">
+      <span  class="empty-span"  id="result-day">--</span>
       <span class="result-items">days</span>
     </div>
   </div>
