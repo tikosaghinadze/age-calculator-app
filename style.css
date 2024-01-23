@@ -109,4 +109,8 @@ letter-spacing: -1.12px;
     .result-items{
         font-size: 104px; 
     }
+    svg{
+        width: 44px;
+        height: 44px; 
+        }
 }
