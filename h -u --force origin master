@@ -1,0 +1,24 @@
+[33mcommit a5c743392490e0c766906cfc50173c22f658c3dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 543768b dbc5683
+Author: tikosaghinadze <teasaghinadze20@gmail.com>
+Date:   Tue Jan 23 22:58:47 2024 +0400
+
+    Merge branch 'master' of https://github.com/tikosaghinadze/age-calculator-app
+
+[33mcommit 543768b3e37c28b20ac150cf00a06b5b2826035a[m
+Author: tikosaghinadze <teasaghinadze20@gmail.com>
+Date:   Tue Jan 23 21:47:32 2024 +0400
+
+    Style: Implement mobile-first design and add desktop- media queries
+
+[33mcommit dbc56839b9b31d8812234a3a7d8ca779d3aa7fb9[m
+Author: tikosaghinadze <teasaghinadze20@gmail.com>
+Date:   Tue Jan 23 21:47:32 2024 +0400
+
+    Style: Implement mobile-first design in CSS
+
+[33mcommit e18bfa6639b4998c0d00629abecdbb87ebd37a52[m
+Author: tikosaghinadze <teasaghinadze20@gmail.com>
+Date:   Tue Jan 23 18:53:26 2024 +0400
+
+    Feature: Add HTML structure for age calculator page
