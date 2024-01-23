@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+<body>
+<script src="./script.js" defer></script>
+<main>
+  <form id="ageCalculatorForm">
+    <div class="input-row">
+<label for="day">DAY</label>
+<input  id="day" name="day">
+</div>
+
+<div class="input-row">
+<label for="month">MONTH</label>
+<input id="month" name="month" >
+</div>
+
+<div class="input-row">
+<label for="year">YEAR</label>
+<input id="year" name="year" >
+</div>
+  </form>
+  <div id="result">
+    <svg id=" arrow-svg" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+    <div class="result-items">
+      <spna id="result-year empty-span"> --</spna>
+      <span class="result-items">years</span>
+    </div>
+    <div >
+      <spnan id="result-month empty-span"">--</spnan>
+      <span class="result-items">months</span>
+    </div>
+    <div>
+      <spna id="result day empty-span"">--</spna>
+      <span class="result-items">days</span>
+    </div>
+  </div>
+</main>
+</body>
+</html>
