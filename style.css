@@ -47,7 +47,6 @@ main{
 .imputDiv{
     padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid var #DCDCDC;
   border: 1px solid var(--Line, #DCDCDC);
   width:100%;
 }
