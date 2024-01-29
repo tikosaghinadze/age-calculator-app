@@ -1,22 +1,21 @@
+// Get the original color before any modifications
+const arrowBtn = document.querySelector(".arrow-svg");
+const originalColor = window.getComputedStyle(arrowBtn).getPropertyValue("background-color");
+
 document.addEventListener('DOMContentLoaded', function () {
     // Reset input fields on page load
     document.getElementById("day").value = "";
     document.getElementById("month").value = "";
     document.getElementById("year").value = "";
 
-    const arrowBtn = document.querySelector(".arrow-svg");
-
-    // Get the original color before any modifications
-    const originalColor = window.getComputedStyle(arrowBtn).getPropertyValue("background-color");
-
     arrowBtn.addEventListener("click", () => {
+        // Set button color to black
+        arrowBtn.style.backgroundColor = "black";
+
         // Check if results are already calculated
         const resultsCalculated = document.getElementById("result-year").textContent !== "--";
 
         if (resultsCalculated) {
-            // Reset button color
-            arrowBtn.style.backgroundColor = originalColor;
-
             // Clear input fields
             document.getElementById("day").value = "";
             document.getElementById("month").value = "";
@@ -32,9 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector(".error-month").textContent = "";
             document.querySelector(".error-year").textContent = "";
         } else {
-            // Set button color to black
-            arrowBtn.style.backgroundColor = "black";
-
             /*****************/
             /*age calculate form*/
             /*****************/
