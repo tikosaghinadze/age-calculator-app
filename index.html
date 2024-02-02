@@ -1,59 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <title>Frontend Mentor | Age calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <script src="./script.js" defer></script>
+    <main>
+      <form id="ageCalculatorForm">
+        <div class="input-row">
+          <label class="common-label" for="day">day</label>
+          <input class="imputDiv" id="day" name="day" placeholder="DD" />
+          <span class="error-day"></span>
+        </div>
 
-</head>
-<body>
-<script src="./script.js" defer></script>
-<main>
-  <form id="ageCalculatorForm">
-    <div class="input-row">
-<label class="common-label" for="day">day</label>
-<input class="imputDiv"  id="day" name="day" placeholder="DD">
-<span class="error-day"></span>
-</div>
+        <div class="input-row">
+          <label class="common-label" for="month">month</label>
+          <input class="imputDiv" id="month" name="month" placeholder="MM" />
+          <span class="error-month"></span>
+        </div>
 
-<div class="input-row">
-<label class="common-label"  for="month">month</label>
-<input class="imputDiv" id="month" name="month" placeholder="MM">
-<span class="error-month"></span>
-</div>
+        <div class="input-row">
+          <label class="common-label" for="year">year</label>
+          <input class="imputDiv" id="year" name="year" placeholder="YYYY" />
+          <span class="error-year"></span>
+        </div>
+      </form>
+      <div class="rectangle-div">
+        <div class="arrow-svg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="46"
+            height="44"
+            viewBox="0 0 46 44"
+          >
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path
+                d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
 
-<div class="input-row">
-<label class="common-label"  for="year">year</label>
-<input class="imputDiv"id="year" name="year"placeholder="YYYY" >
-<span class="error-year"></span>
-</div>
-  </form>
-  <div class="rectangle-div">
-    <div class=" arrow-svg">
-    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
-  </div>
-  </div>
-
-  <div id="result">
-    <div class="results-div">
-      <span class="empty-span" id="result-year"> --</span>
-      <span class="result-items">years</span>
-    </div>
-    <div class="results-div">
-      <span class="empty-span"  id="result-month">--</span>
-      <span class="result-items">months</span>
-    </div>
-    <div class="results-div">
-      <span  class="empty-span"  id="result-day">--</span>
-      <span class="result-items">days</span>
-    </div>
-  </div>
-</main>
-</body>
+      <div id="result">
+        <div class="results-div">
+          <span class="empty-span" id="result-year"> --</span>
+          <span class="result-items">years</span>
+        </div>
+        <div class="results-div">
+          <span class="empty-span" id="result-month">--</span>
+          <span class="result-items">months</span>
+        </div>
+        <div class="results-div">
+          <span class="empty-span" id="result-day">--</span>
+          <span class="result-items">days</span>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,71 +1,74 @@
-
 //elements
-            const dayInput = document.getElementById("day");
-            const monthInput =document.getElementById("month");
-            const yearInput =document.getElementById("year");
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
 
-            const resultYear = document.getElementById("result-year");
-            const resultMonth = document.getElementById("result-month");
-            const resultDay = document.getElementById("result-day");
+const resultYear = document.getElementById("result-year");
+const resultMonth = document.getElementById("result-month");
+const resultDay = document.getElementById("result-day");
 
-            const errorDay = document.querySelector(".error-day");
-            const errorMonth = document.querySelector(".error-month");
-            const errorYear = document.querySelector(".error-year");
+const errorDay = document.querySelector(".error-day");
+const errorMonth = document.querySelector(".error-month");
+const errorYear = document.querySelector(".error-year");
 
-            const arrowBtn = document.querySelector(".arrow-svg");
-            const errorStyle = '0.5px solid var(--Light-red)';
+const arrowBtn = document.querySelector(".arrow-svg");
+const errorStyle = "0.5px solid #FF5959";
+let monthError = false;
+let dayError = false;
+let yearError = false;
+// calculate button
 
-// calculate button       
-
-arrowBtn.addEventListener("click",()=>{
-    const dayInputV=dayInput.value;
-    const monthInputV=monthInput.value;
-    const yearInputV=yearInput.value;
-    const birthday=`${yearInputV}-${monthInputV}-${dayInputV}`
+arrowBtn.addEventListener("click", () => {
+  if (!dayError && !monthError && !yearError) {
+    const dayInputV = dayInput.value;
+    const monthInputV = monthInput.value;
+    const yearInputV = yearInput.value;
+    const birthday = `${yearInputV}-${monthInputV}-${dayInputV}`;
     //age calculation
     let years = new Date().getFullYear() - new Date(birthday).getFullYear();
     let months = new Date().getMonth() - new Date(birthday).getMonth();
     let days = new Date().getDate() - Number(dayInputV);
 
     if (months < 0) {
-        years = years - 1;
-        months = months + 12;
-      }
-    
-      if (days < 0) {
-        days += getNoOfDays(yearInputV, monthInputV- 1);
-      }
-    
-      // Display Values
-      resultDay.textContent= days;
-      resultMonth.textContent= months;
-      resultYear.textContent = years;
-    
-}
-);
+      years = years - 1;
+      months = months + 12;
+    }
+
+    if (days < 0) {
+      days += getNoOfDays(yearInputV, monthInputV - 1);
+    }
+
+    // Display Values
+    resultDay.textContent = days;
+    resultMonth.textContent = months;
+    resultYear.textContent = years;
+  }
+});
 // Get Number of Days in a particular months
 function getNoOfDays(y, m) {
-    return new Date(y, m, 0).getDate();
-  }
+  return new Date(y, m, 0).getDate();
+}
 
-  // On Blur day validation
-dayInput.addEventListener('blur', () => {
+// On Blur day validation
+dayInput.addEventListener("blur", () => {
   validateDay();
 });
 
 // Validate Day function
 const validateDay = () => {
-  const dayInputV=dayInput.value;
-    const monthInputV=monthInput.value;
-    const yearInputV=yearInput.value;
-  if (dayInputV == '') {
-    showMessage(dayInput, 'This field is required', errorStyle);
+  const dayInputV = dayInput.value;
+  const monthInputV = monthInput.value;
+  const yearInputV = yearInput.value;
+  if (dayInputV == "") {
+    showMessage(dayInput, "This field is required", errorStyle);
     return false;
   } else if (!validDay(yearInputV, monthInputV, dayInputV)) {
-    showMessage(dayInput, 'Must be a valid day', errorStyle);
+    showMessage(dayInput, "Must be a valid day", errorStyle);
+    dayError = true;
     return false;
   } else {
-    showMessage(dayInput, '', '');
+    showMessage(dayInput, "", "");
+    dayError = false;
     return true;
   }
 };
@@ -75,22 +78,23 @@ function validDay(y, m, d) {
   return true;
 }
 
-
 // On Blur month validation
-monthInput.addEventListener('blur', () => {
+monthInput.addEventListener("blur", () => {
   validateMonth();
 });
 
 const validateMonth = () => {
   const monthInputV = monthInput.value;
-  if (monthInputV == '') {
-    showMessage(monthInput, 'This field is required', errorStyle);
+  if (monthInputV == "") {
+    showMessage(monthInput, "This field is required", errorStyle);
     return false;
   } else if (!validMonth(monthInputV)) {
-    showMessage(monthInput, 'Must be a valid month', errorStyle);
+    showMessage(monthInput, "Must be a valid month", errorStyle);
+    monthError = true;
     return false;
   } else {
-    showMessage(monthInput, '', '');
+    showMessage(monthInput, "", "");
+    monthError = false;
     return true;
   }
 };
@@ -101,7 +105,7 @@ function validMonth(m) {
 }
 
 // on Blur Year validate
-yearInput.addEventListener('blur', () => {
+yearInput.addEventListener("blur", () => {
   validateYear();
 });
 
@@ -109,14 +113,17 @@ const validateYear = () => {
   const yearInputV = yearInput.value;
   const monthInputV = monthInput.value;
   const dayInputV = dayInput.value;
-  if (yearInputV == '') {
-    showMessage(yearInput, 'This field is required', errorStyle);
+
+  if (yearInputV == "") {
+    showMessage(yearInput, "This field is required", errorStyle);
     return false;
   } else if (!validYear(yearInputV, monthInputV, dayInputV)) {
-    showMessage(yearInput, 'Must be in past', errorStyle);
+    showMessage(yearInput, "Must be in past", errorStyle);
+    yearError = true;
     return false;
   } else {
-    showMessage(yearInput, '', '');
+    showMessage(yearInput, "", "");
+    yearError = false;
     return true;
   }
 };
@@ -130,8 +137,9 @@ function validYear(y, m, d) {
   return false;
 }
 
-  // Display Message
+// Display Message
 function showMessage(elem, msg, border) {
   elem.style.border = border;
   elem.nextElementSibling.innerText = msg;
+  elem.nextElementSibling.style.color = "#FF5959";
 }
